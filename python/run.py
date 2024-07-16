@@ -145,7 +145,9 @@ def sample_inequalities(
             if not first:
                 filtered_cts += 1
             first = False
+        # Look here for the 'fault simulation'
         sign = get_ineqsign(sample)
+        input("Waiting")
         if i >= ((number_faults - num_certain_correct) * p_correct) + num_certain_correct:
             is_correct = False
             p_correct_ineq = p_correct

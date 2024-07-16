@@ -30,9 +30,13 @@ def sample_from_key_bytes(sk_bytes, pk_bytes, e_lists):
 def get_ineqsign(sample, coeff_index=0):
     r, _ = calc_error_term(sample)
     r = reduce_sym_list(r.to_list())
+    print("r=", r, len(r))
+    print("r[coeff_index]=", r[coeff_index], "coeff_index=", coeff_index)
     if r[coeff_index] <= 0:
+        print("Success?")
         return IneqType.LE
     else:
+        print("Fail?")
         return IneqType.GE
 
 

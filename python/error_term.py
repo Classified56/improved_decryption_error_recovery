@@ -42,3 +42,16 @@ def calc_error_term(sample):
     assert sample.nu == rec.to_msg()
     r = rec - msg
     return r, rec
+
+# def calc_error_term(sample):
+#     msg = sample.get_msg()
+#     su = python_kyber.Polyvec.scalar(sample.sk.sk, sample.ct.b.ntt()).intt()
+#     rec = (sample.ct.v - su).reduce()
+#     # probably save this out here...
+#     assert sample.nu == rec.to_msg()
+#     r = rec - msg
+#     print("R     =", r.to_bytes_uncompressed(), len(r.to_bytes_uncompressed()))
+#     print("Rec   =", rec.to_bytes_uncompressed(), len(rec.to_bytes_uncompressed()))
+#     print("Sample=", sample.nu, len(sample.nu))
+#     print("Msg   =", msg.to_bytes_uncompressed(), len(msg.to_bytes_uncompressed()))
+#     return r, rec
